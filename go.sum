@@ -6,6 +6,10 @@ github.com/emilekm/go-prbf2 v0.0.0-20240620194231-e6659c255638 h1:QuAMv478avmBxS
 github.com/emilekm/go-prbf2 v0.0.0-20240620194231-e6659c255638/go.mod h1:3t0NSZaG8YcnMwEwaMA8ed+ZPR1CUNMW3LsIgO4T4do=
 github.com/emilekm/go-prbf2 v0.0.0-20240623195906-da31eb0de3b1 h1:ZkYzlpU4oonYkpAD3fG9JnsbIVDvOUV+aSbjtyQcKRs=
 github.com/emilekm/go-prbf2 v0.0.0-20240623195906-da31eb0de3b1/go.mod h1:3t0NSZaG8YcnMwEwaMA8ed+ZPR1CUNMW3LsIgO4T4do=
+github.com/emilekm/go-prbf2 v0.0.0-20240924144556-20e78e9c3927 h1:W8iw5muAXGdC9nvshvixUqD33OtdPb1wDucUZPmQ1f0=
+github.com/emilekm/go-prbf2 v0.0.0-20240924144556-20e78e9c3927/go.mod h1:3t0NSZaG8YcnMwEwaMA8ed+ZPR1CUNMW3LsIgO4T4do=
+github.com/emilekm/go-prbf2 v0.0.0-20240924153019-a59e8d1c9d3d h1:wvFzT1z6vQTjN9k9vFA1QA3hZ2nUOqJJBgH1Zzk6f20=
+github.com/emilekm/go-prbf2 v0.0.0-20240924153019-a59e8d1c9d3d/go.mod h1:BnTAkFVRb7Irn3wOpzyziftLVJ/Ll4vw2BztRGeSzdY=
 github.com/fatih/color v1.10.0 h1:s36xzo75JdqLaaWoiEHk767eHiwo0598uUxyfiPkDsg=
 github.com/fatih/color v1.10.0/go.mod h1:ELkj/draVOlAH/xkhN6mQ50Qd0MPOk5AAr3maGEBuJM=
 github.com/go-playground/locales v0.13.0 h1:HyWk6mgj5qFqCT5fjGBuRArbVDfE4hi8+e8ceBS/t7Q=
@@ -28,6 +32,8 @@ github.com/mattn/go-isatty v0.0.12 h1:wuysRhFDzyxgEmMf5xjvJ2M9dZoWAXNNr5LSBS7uHX
 github.com/mattn/go-isatty v0.0.12/go.mod h1:cbi8OIDigv2wuxKPP5vlRcQ1OAZbq2CE4Kysco4FUpU=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
+github.com/sethvargo/go-password v0.3.1 h1:WqrLTjo7X6AcVYfC6R7GtSyuUQR9hGyAj/f1PYQZCJU=
+github.com/sethvargo/go-password v0.3.1/go.mod h1:rXofC1zT54N7R8K/h1WDUdkf9BOx5OptoxrMBcrXzvs=
 github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
 github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
 golang.org/x/crypto v0.0.0-20210421170649-83a5a9bb288b/go.mod h1:T9bdIzuCu7OtxOm1hfPfRQxPLYneinmdGuTeoZ9dtd4=

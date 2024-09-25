@@ -28,10 +28,20 @@ type ServerDetails struct {
 	Channels []Channel `yaml:"channels"`
 }
 
+type Role struct {
+	ID    string `yaml:"id"`
+	Level int    `yaml:"level"`
+}
+
+type RCONUsers struct {
+	Roles []Role `yaml:"roles"`
+}
+
 type Config struct {
 	PRISM         PRISM         `yaml:"prism"`
 	Discord       Discord       `yaml:"discord"`
 	ServerDetails ServerDetails `yaml:"serverDetails"`
+	RCONUsers     RCONUsers     `yaml:"rconUsers"`
 }
 
 func NewConfig(path string) (*Config, error) {

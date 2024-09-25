@@ -32,7 +32,7 @@ func New(conf *config.Discord) *Bot {
 		log.Fatal(err)
 	}
 
-	// s.Identify.Intents = discordgo.IntentGuildMembers
+	s.Identify.Intents = discordgo.IntentGuildMembers
 
 	c := &Bot{
 		Config: conf,

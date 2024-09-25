@@ -24,7 +24,7 @@ func main() {
 	}
 }
 
-func run(args []string) error {
+func run(_ []string) error {
 	conf, err := config.NewConfig(configFilePath)
 	if err != nil {
 		return err

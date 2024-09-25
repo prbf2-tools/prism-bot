@@ -17,35 +17,38 @@ type PrismBot struct {
 	conf    *config.Config
 	prism   *prism.Client
 	session *discordgo.Session
+
+	usersCache map[string]prism.User
 }
 
 func New(conf *config.Config, prismClient *prism.Client) (*PrismBot, error) {
 	return &PrismBot{
-		conf:  conf,
-		prism: prismClient,
+		conf:       conf,
+		prism:      prismClient,
+		usersCache: make(map[string]prism.User),
 	}, nil
 }
 
 func (b *PrismBot) Register(client *discord.Bot) {
 	b.session = client.Session()
-	go func() {
-		slog.Info("Starting to handle messages")
-		b.handleMessages()
-	}()
+	b.accounts()
+	b.handleMessages()
 }
 
 func (p *PrismBot) handleMessages() {
-	ticker := time.NewTicker(time.Second * 30)
-	for range ticker.C {
-		ctx := context.Background()
-		msg, err := p.prism.ServerDetails(ctx)
-		if err != nil {
-			slog.Error(err.Error())
-			continue
-		}
+	ticker := time.NewTicker(time.Second * 5)
+	go func() {
+		for range ticker.C {
+			ctx := context.Background()
+			msg, err := p.prism.ServerDetails(ctx)
+			if err != nil {
+				slog.Error(err.Error())
+				continue
+			}
 
-		p.updateServerDetails(msg)
-	}
+			p.updateServerDetails(msg)
+		}
+	}()
 }
 
 func (p *PrismBot) updateServerDetails(msg *prism.ServerDetails) {
