@@ -1,9 +1,11 @@
 package bot
 
 import (
+	"context"
 	"log/slog"
 	"strings"
 	"text/template"
+	"time"
 
 	"github.com/bwmarrin/discordgo"
 	"github.com/emilekm/go-prbf2/prism"
@@ -33,23 +35,16 @@ func (b *PrismBot) Register(client *discord.Bot) {
 }
 
 func (p *PrismBot) handleMessages() {
-	for {
-		rawMsg, err := p.prism.ReadMessage()
+	ticker := time.NewTicker(time.Second * 30)
+	for range ticker.C {
+		ctx := context.Background()
+		msg, err := p.prism.ServerDetails(ctx)
 		if err != nil {
 			slog.Error(err.Error())
 			continue
 		}
 
-		switch rawMsg.Subject() {
-		case prism.SubjectUpdateServerDetails:
-			msg, err := unmarshalMessage[prism.ServerDetails](rawMsg.Body())
-			if err != nil {
-				slog.Error(err.Error())
-				continue
-			}
-
-			p.updateServerDetails(msg)
-		}
+		p.updateServerDetails(msg)
 	}
 }
 
