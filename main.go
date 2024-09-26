@@ -9,6 +9,7 @@ import (
 
 	"github.com/emilekm/go-prbf2/prism"
 	"github.com/prbf2-tools/prism-bot/internal/bot"
+	"github.com/prbf2-tools/prism-bot/internal/bot/users"
 	"github.com/prbf2-tools/prism-bot/internal/config"
 	"github.com/prbf2-tools/prism-bot/internal/discord"
 )
@@ -52,6 +53,9 @@ func run(_ []string) error {
 	}
 
 	prismBot.Register(dBot)
+
+	usersBot := users.New(client, &conf.RCONUsers, conf.Discord.GuildID)
+	usersBot.Register(dBot)
 
 	dBot.Run()
 

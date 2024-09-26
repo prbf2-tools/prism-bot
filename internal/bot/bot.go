@@ -17,21 +17,17 @@ type PrismBot struct {
 	conf    *config.Config
 	prism   *prism.Client
 	session *discordgo.Session
-
-	usersCache map[string]prism.User
 }
 
 func New(conf *config.Config, prismClient *prism.Client) (*PrismBot, error) {
 	return &PrismBot{
-		conf:       conf,
-		prism:      prismClient,
-		usersCache: make(map[string]prism.User),
+		conf:  conf,
+		prism: prismClient,
 	}, nil
 }
 
 func (b *PrismBot) Register(client *discord.Bot) {
 	b.session = client.Session()
-	b.accounts()
 	b.handleMessages()
 }
 
